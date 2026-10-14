@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGMA LOOT</title>
+    <style>
+        body {
+            background-color: #2b1206;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            background: linear-gradient(145deg, #421d0a, #2a1105);
+            border: 2px solid #ff7b0030;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ffb700;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffaa;
+            margin: 10px 0;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #ffb700;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #ffb700, #ff8800);
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            width: 80%;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(255,153,0,0.4);
+        }
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .time-box {
+            background: #220d04;
+            border: 1px solid #ff990040;
+            padding: 10px;
+            border-radius: 10px;
+            width: 40px;
+            text-align: center;
+        }
+        .time-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ffaa;
+        }
+        .time-label {
+            font-size: 10px;
+            color: #aaa;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Aapka image link yahan profile pic me add kar diya gaya hai -->
+        <img src="https://ibb.co/Y7TThnd5" alt="SIGMA LOOT Profile" class="profile-pic">
+        
+        <div class="title">SIGMA LOOT</div>
+        <div class="subtitle">Tips & Tricks</div>
+
+        <a href="https://t.me/+dsXMZi2NVdk0N2E1" class="btn" id="joinBtn">✈️ Join Telegram</a>
+
+        <div class="timer-container">
+            <div class="time-box">
+                <div class="time-number" id="days">00</div>
+                <div class="time-label">DAYS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number" id="hours">00</div>
+                <div class="time-label">HOURS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number" id="mins">00</div>
+                <div class="time-label">MINS</div>
+            </div>
+            <div class="time-box">
+                <div class="time-number" id="secs">05</div>
+                <div class="time-label">SECS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 5 seconds Automatic Redirect to Telegram
+        let timeLeft = 5;
+        const secElement = document.getElementById("secs");
+        const telegramUrl = "https://t.me/+dsXMZi2NVdk0N2E1";
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            secElement.textContent = timeLeft < 10 ? "0" + timeLeft : timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = telegramUrl;
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
